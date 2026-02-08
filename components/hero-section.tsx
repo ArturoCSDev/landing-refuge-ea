@@ -38,10 +38,10 @@ export function HeroSection() {
   return (
     <section
       id="inicio"
-      className="relative flex min-h-screen items-center overflow-hidden bg-gradient-to-br from-ea-primary via-ea-primary to-ea-secondary pt-16"
+      className="relative flex min-h-[100svh] items-center overflow-hidden bg-gradient-to-br from-ea-primary via-ea-primary to-ea-secondary pt-16"
     >
-      {/* Decorative floating elements */}
-      <div className="absolute inset-0">
+      {/* Decorative floating elements - hidden on mobile */}
+      <div className="absolute inset-0 hidden md:block">
         <motion.div
           className="absolute top-20 left-10"
           animate={floatPaw(0)}
@@ -74,10 +74,10 @@ export function HeroSection() {
         </motion.div>
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 py-20 text-center sm:px-6 lg:px-8">
+      <div className="relative mx-auto max-w-7xl px-4 py-10 text-center sm:px-6 sm:py-14 md:py-16 lg:px-8 lg:py-20">
         {/* Logo + org name */}
         <motion.div
-          className="mb-4 flex flex-col items-center gap-3"
+          className="mb-2 flex flex-col items-center gap-2 md:mb-4 md:gap-3"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -88,28 +88,28 @@ export function HeroSection() {
             alt="Esperanza Animal"
             width={80}
             height={80}
-            className="size-20 rounded-full border-2 border-white/30 object-cover shadow-lg"
+            className="size-14 rounded-full border-2 border-white/30 object-cover shadow-lg md:size-20"
           />
-          <span className="text-lg font-semibold tracking-wide text-white/90">
+          <span className="text-base font-semibold tracking-wide text-white/90 md:text-lg">
             Esperanza Animal presenta
           </span>
         </motion.div>
 
         {/* Badge */}
         <motion.div
-          className="mb-6 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-4 py-2 text-sm text-white backdrop-blur-sm"
+          className="mb-3 inline-flex items-center gap-2 rounded-full border border-white/20 bg-white/10 px-3 py-1.5 text-xs text-white backdrop-blur-sm sm:text-sm md:mb-6 md:px-4 md:py-2"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
           custom={1}
         >
-          <PawPrintIcon className="size-4" />
+          <PawPrintIcon className="size-3.5 sm:size-4" />
           <span>Por los que no tienen voz</span>
         </motion.div>
 
         {/* Main headline */}
         <motion.h1
-          className="mx-auto max-w-4xl text-4xl font-bold leading-tight tracking-tight text-white sm:text-5xl md:text-6xl lg:text-7xl"
+          className="mx-auto max-w-4xl text-3xl font-bold leading-tight tracking-tight text-white sm:text-4xl md:text-5xl lg:text-7xl"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -121,7 +121,7 @@ export function HeroSection() {
 
         {/* Subtitle */}
         <motion.p
-          className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-white/80 sm:text-xl"
+          className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-white/80 sm:text-base md:mt-6 md:text-lg lg:text-xl"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -134,7 +134,7 @@ export function HeroSection() {
 
         {/* CTA buttons */}
         <motion.div
-          className="mt-10 flex flex-col items-center justify-center gap-4 sm:flex-row"
+          className="mt-6 flex flex-col items-center justify-center gap-3 sm:flex-row md:mt-10 md:gap-4"
           variants={fadeUp}
           initial="hidden"
           animate="visible"
@@ -143,10 +143,10 @@ export function HeroSection() {
           <Button
             asChild
             size="lg"
-            className="h-14 rounded-full bg-ea-accent px-8 text-base font-semibold text-ea-primary shadow-lg transition-transform hover:scale-105 hover:bg-ea-accent/90"
+            className="h-12 rounded-full bg-ea-accent px-6 text-sm font-semibold text-ea-primary shadow-lg transition-transform hover:scale-105 hover:bg-ea-accent/90 md:h-14 md:px-8 md:text-base"
           >
             <a href="#perritos">
-              <PawPrintIcon className="mr-2 size-5" />
+              <PawPrintIcon className="mr-2 size-4 md:size-5" />
               Ver perritos disponibles
             </a>
           </Button>
@@ -154,14 +154,14 @@ export function HeroSection() {
             asChild
             variant="outline"
             size="lg"
-            className="h-14 rounded-full border-white/30 bg-transparent px-8 text-base font-semibold text-white transition-transform hover:scale-105 hover:bg-white/10"
+            className="h-12 rounded-full border-white/30 bg-transparent px-6 text-sm font-semibold text-white transition-transform hover:scale-105 hover:bg-white/10 md:h-14 md:px-8 md:text-base"
           >
             <a href="#evento">Sobre el evento</a>
           </Button>
         </motion.div>
 
         {/* Stats */}
-        <div className="mt-16 grid grid-cols-3 gap-8">
+        <div className="mt-8 grid grid-cols-3 gap-4 md:mt-14 md:gap-8 lg:mt-16">
           {[
             { value: "150+", label: "Perritos rescatados" },
             { value: "80+", label: "Adopciones exitosas" },
@@ -174,10 +174,12 @@ export function HeroSection() {
               animate="visible"
               custom={5 + i}
             >
-              <p className="text-3xl font-bold text-ea-accent sm:text-4xl">
+              <p className="text-2xl font-bold text-ea-accent sm:text-3xl lg:text-4xl">
                 {stat.value}
               </p>
-              <p className="mt-1 text-sm text-white/70">{stat.label}</p>
+              <p className="mt-0.5 text-xs text-white/70 sm:text-sm md:mt-1">
+                {stat.label}
+              </p>
             </motion.div>
           ))}
         </div>

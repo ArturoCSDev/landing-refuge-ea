@@ -45,7 +45,7 @@ const eventDetails = [
 
 export function AboutEvent() {
   return (
-    <section id="evento" className="bg-ea-light py-20">
+    <section id="evento" className="bg-ea-light py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
@@ -83,15 +83,15 @@ export function AboutEvent() {
         </div>
 
         {/* Benefits */}
-        <div className="mt-16">
-          <h3 className="text-center text-2xl font-bold text-ea-primary">
+        <div className="mt-10 sm:mt-16">
+          <h3 className="text-center text-xl font-bold text-ea-primary sm:text-2xl">
             ¿Por qué adoptar?
           </h3>
-          <div className="mt-8 grid gap-8 sm:grid-cols-3">
+          <div className="mt-6 grid gap-6 sm:mt-8 sm:grid-cols-3 sm:gap-8">
             {benefits.map((benefit) => (
               <div
                 key={benefit.title}
-                className="group rounded-xl bg-white p-8 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg"
+                className="group rounded-xl bg-white p-6 text-center shadow-sm transition-all hover:-translate-y-1 hover:shadow-lg sm:p-8"
               >
                 <div className="mx-auto flex size-16 items-center justify-center rounded-full bg-ea-secondary/10 transition-colors group-hover:bg-ea-secondary/20">
                   <benefit.icon className="size-8 text-ea-secondary" />

@@ -40,20 +40,20 @@ const faqs = [
 
 export function FaqSection() {
   return (
-    <section id="faq" className="bg-ea-light py-20">
+    <section id="faq" className="bg-ea-light py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-ea-secondary">
             Resolvemos tus dudas
           </p>
-          <h2 className="mt-2 text-3xl font-bold text-ea-primary sm:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold text-ea-primary sm:text-3xl md:text-4xl">
             Preguntas Frecuentes
           </h2>
         </div>
 
         {/* Accordion */}
-        <div className="mt-10">
+        <div className="mt-8 sm:mt-10">
           <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
               <AccordionItem

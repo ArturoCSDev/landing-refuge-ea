@@ -10,7 +10,6 @@ const navLinks = [
   { label: "Evento", href: "#evento" },
   { label: "Perritos", href: "#perritos" },
   { label: "Preguntas", href: "#faq" },
-  { label: "Contacto", href: "#contacto" },
 ];
 
 export function Header() {

@@ -37,24 +37,24 @@ export function DogsGrid() {
   }
 
   return (
-    <section id="perritos" className="bg-white py-20">
+    <section id="perritos" className="bg-white py-12 sm:py-16 lg:py-20">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section header */}
         <div className="mx-auto max-w-2xl text-center">
           <p className="text-sm font-semibold uppercase tracking-widest text-ea-secondary">
             Encuentra a tu compañero
           </p>
-          <h2 className="mt-2 text-3xl font-bold text-ea-primary sm:text-4xl">
+          <h2 className="mt-2 text-2xl font-bold text-ea-primary sm:text-3xl md:text-4xl">
             Perritos en Adopción
           </h2>
-          <p className="mt-4 text-lg text-ea-text/70">
+          <p className="mt-3 text-base text-ea-text/70 sm:mt-4 sm:text-lg">
             Cada uno de ellos fue rescatado y rehabilitado con mucho amor.
             ¿Cuál robará tu corazón?
           </p>
         </div>
 
         {/* Dogs grid */}
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="mt-8 grid gap-5 sm:mt-12 sm:grid-cols-2 sm:gap-6 lg:grid-cols-4">
           {currentDogs.map((dog) => (
             <DogCard key={dog.id} dog={dog} onSelect={handleSelect} />
           ))}
@@ -62,7 +62,7 @@ export function DogsGrid() {
 
         {/* Pagination */}
         {totalPages > 1 && (
-          <div className="mt-10">
+          <div className="mt-8 sm:mt-10">
             <Pagination>
               <PaginationContent>
                 <PaginationItem>
